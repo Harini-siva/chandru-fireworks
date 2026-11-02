@@ -1,0 +1,28 @@
+/* SHOP BY CATEGORIES */
+.categories-section { position: relative; padding: clamp(64px, 9vw, 110px) 0; background: #fffaf8; overflow: hidden; }
+.categories-section::before, .categories-section::after { content: ""; position: absolute; width: 340px; height: 340px; border-radius: 50%; background: #f9e7e4; opacity: 0.7; pointer-events: none; }
+.categories-section::before { top: -150px; left: -120px; }
+.categories-section::after { right: -120px; bottom: -130px; }
+.categories-section .container { position: relative; z-index: 1; }
+
+.categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: clamp(16px, 2vw, 26px); }
+.category-wrap { display: flex; }
+
+.category-card {
+  display: flex; flex-direction: column; width: 100%; text-decoration: none; color: inherit;
+  background: #fff; border: 1px solid #f3e5df; border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), border-color 0.3s;
+}
+.category-card:hover, .category-card:focus-visible { transform: translateY(-8px); box-shadow: var(--shadow-lift), 0 0 0 1.5px var(--gold-deep); border-color: var(--gold-deep); }
+.category-card-image { position: relative; overflow: hidden; }
+.category-card-image .media { display: block; }
+.category-card:hover .media > svg, .category-card:hover .media > img { transform: scale(1.1); }
+.category-card-image::after { content: ""; position: absolute; inset: auto 0 0 0; height: 40%; background: linear-gradient(transparent, rgba(36, 0, 6, 0.55)); pointer-events: none; }
+.category-count { position: absolute; z-index: 1; left: 12px; bottom: 10px; padding: 3px 11px; border-radius: 999px; background: rgba(36, 0, 6, 0.55); border: 1px solid rgba(246, 206, 88, 0.5); color: var(--gold-soft); font-size: 0.72rem; font-weight: 700; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.category-card-content { display: flex; flex: 1; flex-direction: column; gap: 8px; padding: 18px 20px 20px; }
+.category-card-content h3 { font-size: 1.15rem; color: var(--maroon); }
+.category-card-content p { font-size: 0.9rem; color: var(--ink-soft); flex: 1; }
+.view-products { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; font-weight: 800; font-size: 0.9rem; color: var(--maroon-600); }
+.view-products .arrow { transition: transform 0.3s var(--ease); }
+.category-card:hover .view-products .arrow { transform: translateX(6px); }

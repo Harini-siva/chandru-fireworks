@@ -1,0 +1,558 @@
+/* =========================================
+   CATEGORY SPOTLIGHTS
+========================================= */
+
+#spotlight {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.spot {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: #160609;
+}
+
+/* =========================================
+   BACKGROUND VIDEO
+========================================= */
+
+.spot-video {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.spot-video-media {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center center;
+
+  pointer-events: none;
+}
+
+/* Dark overlay */
+.spot-video-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 2, 5, 0.92) 0%,
+      rgba(12, 2, 5, 0.78) 35%,
+      rgba(12, 2, 5, 0.45) 65%,
+      rgba(12, 2, 5, 0.65) 100%
+    );
+
+  z-index: 1;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.spot-inner {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 100px 60px;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.spot-copy {
+  width: 100%;
+  max-width: 650px;
+
+  text-align: left;
+
+  margin: 0;
+}
+
+/* Alternate sections move content to right */
+.spot--flip .spot-inner {
+  justify-content: flex-end;
+}
+
+.spot--flip .spot-copy {
+  text-align: left;
+}
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.spot-copy .eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 18px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.eyebrow--gold {
+  color: #f6ce58;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.spot-copy h2 {
+  margin: 0 0 18px;
+
+  font-size: clamp(42px, 6vw, 82px);
+
+  line-height: 0.95;
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+  color: #fff8e8;
+}
+
+/* =========================================
+   LINE
+========================================= */
+
+.spot-line {
+  margin: 0 0 14px;
+
+  font-size: clamp(18px, 2vw, 25px);
+
+  line-height: 1.4;
+
+  font-weight: 600;
+
+  color: #f6ce58;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.spot-text {
+  max-width: 580px;
+
+  margin: 0 0 24px;
+
+  font-size: 16px;
+  line-height: 1.75;
+
+  color: rgba(255, 248, 232, 0.82);
+}
+
+/* =========================================
+   PRODUCT ITEMS
+========================================= */
+
+.spot-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  margin: 0 0 30px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.spot-items li {
+  padding: 8px 14px;
+
+  border: 1px solid rgba(246, 206, 88, 0.35);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #fff8e8;
+
+  font-size: 13px;
+  line-height: 1;
+
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.btn {
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 20px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: #f6ce58;
+  color: #241016;
+}
+
+.btn-gold:hover {
+  background: #ffe291;
+}
+
+.btn-glass {
+  color: #fff8e8;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1600px) {
+  .spot-inner {
+    max-width: 1500px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .spot-copy {
+    max-width: 700px;
+  }
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1199px) {
+  .spot-inner {
+    padding: 90px 45px;
+  }
+
+  .spot-copy {
+    max-width: 580px;
+  }
+
+  .spot-copy h2 {
+    font-size: clamp(40px, 6vw, 68px);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .spot {
+    min-height: 90vh;
+  }
+
+  .spot-inner {
+    min-height: 90vh;
+
+    padding: 90px 32px;
+
+    align-items: center;
+  }
+
+  .spot-copy {
+    max-width: 560px;
+  }
+
+  .spot--flip .spot-inner {
+    justify-content: flex-start;
+  }
+
+  .spot-copy h2 {
+    font-size: clamp(42px, 8vw, 64px);
+  }
+
+  .spot-text {
+    font-size: 15px;
+  }
+
+  .spot-video-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(12, 2, 5, 0.9) 0%,
+        rgba(12, 2, 5, 0.68) 55%,
+        rgba(12, 2, 5, 0.5) 100%
+      );
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .spot {
+    min-height: 100svh;
+
+    align-items: flex-end;
+  }
+
+  .spot-inner {
+    min-height: 100svh;
+
+    padding: 70px 20px 45px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .spot--flip .spot-inner {
+    justify-content: flex-start;
+  }
+
+  .spot-copy,
+  .spot--flip .spot-copy {
+    width: 100%;
+    max-width: 100%;
+
+    text-align: left;
+  }
+
+  .spot-copy .eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+
+  .spot-copy h2 {
+    margin-bottom: 14px;
+
+    font-size: clamp(38px, 12vw, 54px);
+
+    line-height: 0.96;
+  }
+
+  .spot-line {
+    margin-bottom: 10px;
+
+    font-size: 17px;
+  }
+
+  .spot-text {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .spot-items {
+    gap: 7px;
+
+    margin-bottom: 22px;
+  }
+
+  .spot-items li {
+    padding: 7px 11px;
+
+    font-size: 11px;
+  }
+
+  .btn-row {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .spot-video-media {
+    object-position: center center;
+  }
+
+  .spot-video-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(12, 2, 5, 0.25) 0%,
+        rgba(12, 2, 5, 0.35) 35%,
+        rgba(12, 2, 5, 0.82) 65%,
+        rgba(12, 2, 5, 0.97) 100%
+      );
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .spot-inner {
+    padding: 60px 16px 32px;
+  }
+
+  .spot-copy h2 {
+    font-size: 38px;
+  }
+
+  .spot-line {
+    font-size: 16px;
+  }
+
+  .spot-text {
+    font-size: 13px;
+  }
+
+  .btn {
+    min-height: 45px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+}
+/* =========================================
+   VIDEO VARIATIONS (same footage, different looks)
+========================================= */
+
+.spot-video-media {
+  background: #160609;
+  transition: opacity 0.6s ease;
+}
+
+.spot-video-media.is-flipped {
+  transform: scaleX(-1);
+}
+
+.spot-video-media.tint-warm {
+  filter: hue-rotate(-28deg) saturate(1.15);
+}
+
+/* lighter, cleaner overlay so the video stays clearly visible behind the text */
+.spot-video-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 2, 5, 0.9) 0%,
+      rgba(12, 2, 5, 0.62) 40%,
+      rgba(12, 2, 5, 0.2) 75%,
+      rgba(12, 2, 5, 0.4) 100%
+    );
+}
+
+.spot--flip .spot-video-overlay {
+  background:
+    linear-gradient(
+      270deg,
+      rgba(12, 2, 5, 0.9) 0%,
+      rgba(12, 2, 5, 0.62) 40%,
+      rgba(12, 2, 5, 0.2) 75%,
+      rgba(12, 2, 5, 0.4) 100%
+    );
+}
+
+@media (max-width: 800px) {
+  .spot-video-overlay,
+  .spot--flip .spot-video-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(12, 2, 5, 0.3) 0%,
+        rgba(12, 2, 5, 0.4) 30%,
+        rgba(12, 2, 5, 0.85) 62%,
+        rgba(12, 2, 5, 0.97) 100%
+      );
+  }
+}
+
+/* the video overlay above already handles readability, so drop the older side gradient */
+#spotlight .spot::before,
+#spotlight .spot--flip::before {
+  content: none;
+}

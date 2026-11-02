@@ -1,0 +1,211 @@
+/* ========================================
+   SPOTLIGHT VIDEO BACKGROUND
+======================================== */
+
+.spot-video-media {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center center;
+
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  background-color: #000;
+
+  pointer-events: none;
+  user-select: none;
+
+  z-index: 0;
+}
+
+/* ========================================
+   FLIP VIDEO HORIZONTALLY
+======================================== */
+
+.spot-video-media.is-flipped {
+  transform: scaleX(-1);
+}
+
+/* ========================================
+   VIDEO TINT OVERLAYS
+======================================== */
+
+.spot-video-media[class*="tint-"] {
+  filter: brightness(0.85);
+}
+
+.spot-video-media.tint-dark {
+  filter: brightness(0.55);
+}
+
+.spot-video-media.tint-light {
+  filter: brightness(1.1);
+}
+
+.spot-video-media.tint-warm {
+  filter: sepia(0.15) brightness(0.85);
+}
+
+/* ========================================
+   SPOTLIGHT SECTION CONTAINER
+======================================== */
+
+.spotlight-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 450px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background-color: #000;
+}
+
+/* ========================================
+   VIDEO BACKGROUND LAYER
+======================================== */
+
+.spotlight-section .spot-video-media {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+
+  z-index: -2;
+}
+
+/* ========================================
+   OPTIONAL DARK OVERLAY
+======================================== */
+
+.spotlight-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* ========================================
+   SPOTLIGHT CONTENT
+======================================== */
+
+.spotlight-content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  min-height: 450px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 60px 6%;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   RESPONSIVE VIDEO - TABLETS
+======================================== */
+
+@media (max-width: 1024px) {
+  .spotlight-section {
+    min-height: 400px;
+  }
+
+  .spotlight-content {
+    min-height: 400px;
+    padding: 48px 5%;
+  }
+
+  .spot-video-media {
+    object-position: center center;
+  }
+}
+
+/* ========================================
+   RESPONSIVE VIDEO - MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  .spotlight-section {
+    min-height: 380px;
+  }
+
+  .spotlight-content {
+    min-height: 380px;
+    padding: 36px 6%;
+  }
+
+  .spot-video-media {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .spotlight-section::before {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+  }
+}
+
+/* ========================================
+   SMALL MOBILE DEVICES
+======================================== */
+
+@media (max-width: 480px) {
+  .spotlight-section {
+    min-height: 320px;
+  }
+
+  .spotlight-content {
+    min-height: 320px;
+    padding: 28px 5%;
+  }
+
+  .spot-video-media {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY - REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .spot-video-media {
+    animation: none !important;
+    transition: none !important;
+  }
+}
