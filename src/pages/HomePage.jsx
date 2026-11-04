@@ -5,6 +5,7 @@ import Categories from '../components/Categories.jsx'
 import CategorySpotlights from '../components/CategorySpotlights.jsx'
 import PriceListTeaser from '../components/PriceListTeaser.jsx'
 import Collections from '../components/Collections.jsx'
+import ShopAd from '../components/ShopAd.jsx'
 import GiftShowcase from '../components/GiftShowcase.jsx'
 import Festival from '../components/Festival.jsx'
 import About from '../components/About.jsx'
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Categories />
       <CategorySpotlights />
       <Collections />
+      <ShopAd />
       <PriceListTeaser />
       <GiftShowcase />
       <Festival />
